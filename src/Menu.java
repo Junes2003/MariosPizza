@@ -30,11 +30,11 @@ public class Menu {
         menu.add("\"No. 23 BBQ Chicken\", \"BBQ sauce, cheese, chicken, red onion\", 84));");
         menu.add("\"No. 24 Toscana\", \"Tomato sauce, cheese, Italian sausage, bell pepper\", 86));");
         menu.add("\"No. 25 Vegetariana\", \"Tomato sauce, cheese, mushrooms, bell pepper, olives, onion\", 78));");
-        menu.add("\"No. 26 Bianca\", \"Cream, mozzarella, potato, rosemary, truffle oil\", 90));");
-        menu.add("\"No. 27 Inferno\", \"Tomato sauce, cheese, spicy pepperoni, jalapeños, chili oil\", 85));");
-        menu.add("\"No. 28 Napoli\", \"Tomato sauce, cheese, anchovies, capers, olives\", 79));");
-        menu.add("\"No. 29 Gorgonzola\", \"Tomato sauce, cheese, gorgonzola, pears, walnuts\", 89));");
-        menu.add("\"No. 30 Mexicana\", \"Tomato sauce, cheese, minced beef, jalapeños, sour cream\", 84));");
+        menu.add("\"No. 26 Ali\", \"Cream, mozzarella, potato, rosemary, truffle oil\", 90));");
+        menu.add("\"No. 27 Junes\", \"Tomato sauce, cheese, spicy pepperoni, jalapeños, chili oil\", 85));");
+        menu.add("\"No. 28 MO\", \"Tomato sauce, cheese, anchovies, capers, olives\", 79));");
+        menu.add("\"No. 29 Alan\", \"Tomato sauce, cheese, gorgonzola, pears, walnuts\", 89));");
+        menu.add("\"No. 30 Aden\", \"Tomato sauce, cheese, minced beef, jalapeños, sour cream\", 84));");
 
 
     }
