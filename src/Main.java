@@ -1,5 +1,8 @@
 public class Main {
     public static void main(String[] args) {
+        Order order = new Order();
+        order.printLogin();
+
         Menu menu = new Menu();
         menu.printMenu();
     }

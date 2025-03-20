@@ -35,7 +35,6 @@ public class Menu {
         menu.add("\"No. 28 MO\", \"Tomato sauce, cheese, anchovies, capers, olives\", 79));");
         menu.add("\"No. 29 Alan\", \"Tomato sauce, cheese, gorgonzola, pears, walnuts\", 89));");
         menu.add("\"No. 30 Aden\", \"Tomato sauce, cheese, butter chicken, jalapeños, \", 84));");
-
     }
 
     public void printMenu(){

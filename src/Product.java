@@ -3,14 +3,16 @@ public class Product {
     private double price;
     public String ingredients;
 
-    public void product (String name, double price, String ingredients) {
+    public Product (String name, double price, String ingredients) {
         this.name = name;
         this.price = price;
         this.ingredients = ingredients;
     }
+
     public String getName(){
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
