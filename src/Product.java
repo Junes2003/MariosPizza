@@ -27,7 +27,6 @@ public class Product {
         this.ingredients = ingredients;
     }
 public String toString() {
-    return "Product{" + "Name=" + name + "price=" + price + "ingredients=" + ingredients;
-}
+    return "Product{" + "Name=" + name + "price=" + price + "ingredients=" + ingredients;}
 
 }
