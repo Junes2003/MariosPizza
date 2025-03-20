@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("mo er gay");
+        System.out.println("junes er gay");
     }
 }
