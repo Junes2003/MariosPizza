@@ -34,7 +34,7 @@ public class Menu {
         menu.add("\"No. 27 Junes\", \"Tomato sauce, cheese, spicy pepperoni, jalapeños, chili oil\", 85));");
         menu.add("\"No. 28 MO\", \"Tomato sauce, cheese, anchovies, capers, olives\", 79));");
         menu.add("\"No. 29 Alan\", \"Tomato sauce, cheese, gorgonzola, pears, walnuts\", 89));");
-        menu.add("\"No. 30 Aden\", \"Tomato sauce, cheese, minced beef, jalapeños, sour cream\", 84));");
+        menu.add("\"No. 30 Aden\", \"Tomato sauce, cheese, butter chicken, jalapeños, \", 84));");
 
     }
 
