@@ -6,7 +6,7 @@ public class Order {
     private double totalPrice;
     private double orderTime;
 
-    public Order(){
+    public Order() {
     }
 
     public Order(String customerOrder, int orderID, double totalPrice, double orderTime) {
@@ -19,7 +19,7 @@ public class Order {
     public void addProduct(Product product) {
     }
 
-    public void printLogin(){
+    public void printLogin() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Velkommen til! Indtast kode for at starte systemet:");
         String startSystem = scan.nextLine();
@@ -28,12 +28,17 @@ public class Order {
 
         if (startSystem.equals(code)) {
             System.out.println("Du er nu logget ind");
-        } else if (!startSystem.equals(code)) {
+        } else {
             while (true) {
                 System.out.println("Ugyldigt input! Prøv igen");
-                String retry = scan.nextLine();
-            }
-        }
+                startSystem = scan.nextLine();
 
+                if (startSystem.equals(code)) {
+                    System.out.println("Du er nu logget ind");
+                    break;
+                }
+            }
+
+        }
     }
 }
