@@ -19,4 +19,4 @@ class Accountancy {
         System.out.println("Total revenue: " + getTotalRevenue() + " DKK");
     }
 }
-}
+
