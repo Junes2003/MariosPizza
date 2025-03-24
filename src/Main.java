@@ -1,5 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Mo er gay");
+        Order order = new Order();
+        order.printLogin();
+
+        Menu menu = new Menu();
+        menu.printMenu();
     }
 }
+
