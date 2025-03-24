@@ -1,22 +1,27 @@
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Order {
-    private String customerOrder;
-    private int orderID;
-    private double totalPrice;
-    private double orderTime;
+    private ArrayList<Product> orderLine;
+    private String customerName;
+    private double orderId;
+    private boolean isPaid;
+    private LocalDateTime pickUpTime;
+    private int orderCounter;
 
-    public Order() {
-    }
-
-    public Order(String customerOrder, int orderID, double totalPrice, double orderTime) {
-        this.customerOrder = customerOrder;
-        this.orderID = orderID;
-        this.totalPrice = totalPrice;
-        this.orderTime = orderTime;
+    public Order(String customerName, double orderId, boolean isPaid, LocalDateTime pickUpTime) {
+        orderLine = new ArrayList<>();
+        this.customerName = customerName;
+        this.orderId = orderId;
+        this.isPaid = isPaid;
+        this.pickUpTime = pickUpTime;
+        orderCounter = 0;
+        orderCounter++;
     }
 
     public void addProduct(Product product) {
+        orderLine.add(product);
     }
 
     public void printLogin() {
