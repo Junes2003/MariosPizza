@@ -1,7 +1,7 @@
 public class Product {
     private String name;
     private double price;
-    public String ingredients;
+    private String ingredients;
 
     public Product (String name, double price, String ingredients) {
         this.name = name;
