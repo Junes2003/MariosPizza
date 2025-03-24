@@ -28,6 +28,7 @@ public class Order {
 
         if (startSystem.equals(code)) {
             System.out.println("Du er nu logget ind");
+            System.out.println("Her er menuen:");
         } else {
             while (true) {
                 System.out.println("Ugyldigt input! Prøv igen");
