@@ -24,27 +24,7 @@ public class Order {
         orderLine.add(product);
     }
 
-    public void printLogin() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Velkommen til! Indtast kode for at starte systemet:");
-        String startSystem = scan.nextLine();
+    public void removeProduct() {
 
-        String code = "Osman";
-
-        if (startSystem.equals(code)) {
-            System.out.println("Du er nu logget ind");
-            System.out.println("Her er menuen:");
-        } else {
-            while (true) {
-                System.out.println("Ugyldigt input! Prøv igen");
-                startSystem = scan.nextLine();
-
-                if (startSystem.equals(code)) {
-                    System.out.println("Du er nu logget ind");
-                    break;
-                }
-            }
-
-        }
     }
 }

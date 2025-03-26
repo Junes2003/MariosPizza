@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Menu {
     private ArrayList<String> menu;
@@ -35,6 +36,36 @@ public class Menu {
         menu.add("\"No. 28 MO\", \"Tomato sauce, cheese, anchovies, capers, olives\", 79));");
         menu.add("\"No. 29 Alan\", \"Tomato sauce, cheese, gorgonzola, pears, walnuts\", 89));");
         menu.add("\"No. 30 Aden\", \"Tomato sauce, cheese, butter chicken, jalapeños, \", 84));");
+    }
+
+    public void printSystemMenu() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println();
+
+
+        //
+        System.out.println("Velkommen til! Indtast kode for at starte systemet:");
+        String startSystem = scan.nextLine();
+
+        String code = "Osman";
+
+        if (!startSystem.equals(code)) {
+            while (true) {
+                System.out.println("Ugyldigt input! Prøv igen");
+                String retry = scan.nextLine();
+
+                if (retry.equals(code)) {
+                    System.out.println("Du er nu logget ind!");
+                    break;
+                }
+            }
+
+        } else if (startSystem.equals(code)) {
+            System.out.println("Du er nu logget ind!");
+        }
+
+
     }
 
     public void printMenu(){
