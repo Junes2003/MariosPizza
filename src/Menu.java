@@ -1,76 +1,57 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Menu {
-    private ArrayList<String> menu;
+    private ArrayList<Product> products;
+    public ArrayList<Order> orders;
 
     public Menu() {
-        this.menu = new ArrayList<>();
-        menu.add("\"No. 1 Vesuvio\", \"Tomato sauce, cheese, ham\", 72));");
-        menu.add("\"No. 2 American\", \"Tomato sauce, cheese, pepperoni\", 68));");
-        menu.add("\"No. 3 Cacciatore\", \"Tomato sauce, cheese, ham, mushrooms\", 72))");
-        menu.add("\"No. 4 Carbonara\", \"Tomato sauce, cheese, egg, bacon\", 80))");
-        menu.add("\"No. 5 Dennis\", \"Tomato sauce, cheese, ham, pepperoni, bacon\", 83))");
-        menu.add("\"No. 6 Bertil\", \"Tomato sauce, cheese, ham, onion\", 72))");
-        menu.add("\"No. 7 Silvia\", \"Tomato sauce, cheese, artichoke, olives\", 76))");
-        menu.add("\"No. 8 Victoria\", \"Tomato sauce, cheese, ham, mushrooms, bell pepper\", 76))");
-        menu.add("\"No. 9 Toronfo\", \"Tomato sauce, cheese, meat sauce, onion, garlic\", 76))");
-        menu.add("\"No. 10 Capricciosa\", \"Tomato sauce, cheese, ham, mushrooms, olives\", 76))");
-        menu.add("\"No. 11 Hawaii\", \"Tomato sauce, cheese, ham, pineapple\", 76))");
-        menu.add("\"No. 12 Le Blissola\", \"Tomato sauce, cheese, ham, shrimp\", 76))");
-        menu.add("\"No. 13 Venezia\", \"Tomato sauce, cheese, ham, shrimp\", 76))");
-        menu.add("\"No. 14 Mafia\", \"Tomato sauce, cheese, pepperoni, garlic\", 76))");
-        menu.add("\"No. 15 Diavola\", \"Tomato sauce, cheese, spicy salami, chili\", 82));");
-        menu.add("\"No. 16 Quattro Formaggi\", \"Tomato sauce, mozzarella, gorgonzola, parmesan, ricotta\", 85));");
-        menu.add("\"No. 17 Parma\", \"Tomato sauce, cheese, Parma ham, arugula, parmesan\", 90));");
-        menu.add("\"No. 18 Margherita\", \"Tomato sauce, cheese, fresh basil\", 65));");
-        menu.add("\"No. 19 Quattro Stagioni\", \"Tomato sauce, cheese, ham, mushrooms, artichoke, olives\", 80));");
-        menu.add("\"No. 20 Rustica\", \"Tomato sauce, cheese, potato, rosemary, bacon\", 82));");
-        menu.add("\"No. 21 Frutti di Mare\", \"Tomato sauce, cheese, mixed seafood, garlic\", 88));");
-        menu.add("\"No. 22 Calzone\", \"Tomato sauce, cheese, ham, mushrooms (folded pizza)\", 78));");
-        menu.add("\"No. 23 BBQ Chicken\", \"BBQ sauce, cheese, chicken, red onion\", 84));");
-        menu.add("\"No. 24 Toscana\", \"Tomato sauce, cheese, Italian sausage, bell pepper\", 86));");
-        menu.add("\"No. 25 Vegetariana\", \"Tomato sauce, cheese, mushrooms, bell pepper, olives, onion\", 78));");
-        menu.add("\"No. 26 Ali\", \"Cream, mozzarella, potato, rosemary, truffle oil\", 90));");
-        menu.add("\"No. 27 Junes\", \"Tomato sauce, cheese, spicy pepperoni, jalapeños, chili oil\", 85));");
-        menu.add("\"No. 28 MO\", \"Tomato sauce, cheese, anchovies, capers, olives\", 79));");
-        menu.add("\"No. 29 Alan\", \"Tomato sauce, cheese, gorgonzola, pears, walnuts\", 89));");
-        menu.add("\"No. 30 Aden\", \"Tomato sauce, cheese, butter chicken, jalapeños, \", 84));");
+        products = new ArrayList<>();
+        orders = new ArrayList<>();
+        loadMenu();
     }
 
-    public void printSystemMenu() {
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println();
-
-
-        //
-        System.out.println("Velkommen til! Indtast kode for at starte systemet:");
-        String startSystem = scan.nextLine();
-
-        String code = "Osman";
-
-        if (!startSystem.equals(code)) {
-            while (true) {
-                System.out.println("Ugyldigt input! Prøv igen");
-                String retry = scan.nextLine();
-
-                if (retry.equals(code)) {
-                    System.out.println("Du er nu logget ind!");
-                    break;
-                }
-            }
-
-        } else if (startSystem.equals(code)) {
-            System.out.println("Du er nu logget ind!");
-        }
-
-
+    private void loadMenu() {
+        products.add(new Product("No. 1 Vesuvio", 72, "Tomato sauce, cheese, ham"));
+        products.add(new Product("No. 2 American", 68, "Tomato sauce, cheese, pepperoni"));
+        products.add(new Product("No. 3 Cacciatore", 72, "Tomato sauce, cheese, ham, mushrooms"));
+        products.add(new Product("No. 4 Carbonara", 80, "Tomato sauce, cheese, egg, bacon"));
+        products.add(new Product("No. 5 Dennis", 83, "Tomato sauce, cheese, ham, pepperoni, bacon"));
+        products.add(new Product("No. 6 Bertil", 72, "Tomato sauce, cheese, ham, onion"));
+        products.add(new Product("No. 7 Silvia", 76, "Tomato sauce, cheese, artichoke, olives"));
+        products.add(new Product("No. 8 Victoria", 76, "Tomato sauce, cheese, ham, mushrooms, bell pepper"));
+        products.add(new Product("No. 9 Toronfo", 76, "Tomato sauce, cheese, meat sauce, onion, garlic"));
+        products.add(new Product("No. 10 Capricciosa", 76, "Tomato sauce, cheese, ham, mushrooms, olives"));
+        products.add(new Product("No. 11 Hawaii", 76, "Tomato sauce, cheese, ham, pineapple"));
+        products.add(new Product("No. 12 Le Blissola", 76, "Tomato sauce, cheese, ham, shrimp"));
+        products.add(new Product("No. 13 Venezia", 76, "Tomato sauce, cheese, ham, shrimp"));
+        products.add(new Product("No. 14 Mafia", 76, "Tomato sauce, cheese, pepperoni, garlic"));
+        products.add(new Product("No. 15 Diavola", 82, "Tomato sauce, cheese, spicy salami, chili"));
+        products.add(new Product("No. 16 Quattro Formaggi", 85, "Tomato sauce, mozzarella, gorgonzola, parmesan, ricotta"));
+        products.add(new Product("No. 17 Parma", 90, "Tomato sauce, cheese, Parma ham, arugula, parmesan"));
+        products.add(new Product("No. 18 Margherita", 65, "Tomato sauce, cheese, fresh basil"));
+        products.add(new Product("No. 19 Quattro Stagioni", 80, "Tomato sauce, cheese, ham, mushrooms, artichoke, olives"));
+        products.add(new Product("No. 20 Rustica", 82, "Tomato sauce, cheese, potato, rosemary, bacon"));
+        products.add(new Product("No. 21 Frutti di Mare", 88, "Tomato sauce, cheese, mixed seafood, garlic"));
+        products.add(new Product("No. 22 Calzone", 78, "Tomato sauce, cheese, ham, mushrooms (folded pizza)"));
+        products.add(new Product("No. 23 BBQ Chicken", 84, "BBQ sauce, cheese, chicken, red onion"));
+        products.add(new Product("No. 24 Toscana", 86, "Tomato sauce, cheese, Italian sausage, bell pepper"));
+        products.add(new Product("No. 25 Vegetariana", 78, "Tomato sauce, cheese, mushrooms, bell pepper, olives, onion"));
+        products.add(new Product("No. 26 Ali", 90, "Cream, mozzarella, potato, rosemary, truffle oil"));
+        products.add(new Product("No. 27 Junes", 85, "Tomato sauce, cheese, spicy pepperoni, jalapeños, chili oil"));
+        products.add(new Product("No. 28 MO", 79, "Tomato sauce, cheese, anchovies, capers, olives"));
+        products.add(new Product("No. 29 Alan", 89, "Tomato sauce, cheese, gorgonzola, pears, walnuts"));
+        products.add(new Product("No. 30 Aden", 84, "Tomato sauce, cheese, butter chicken, jalapeños"));
     }
 
-    public void printMenu(){
-        for (String element : menu){
-            System.out.println(element);
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public void printMenu() {
+        for (Product product : products) {
+            System.out.println(product);
         }
     }
 }
+
+
