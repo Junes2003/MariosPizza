@@ -1,16 +1,18 @@
 import java.util.Scanner;
 
+// Scanner til at læse brugerinput
 public class InputHelper {
 
+    // Farvekoder til konsoltekst
     private static final Scanner scanner = new Scanner(System.in);
-    public static final String RED = "\u001B[31m";
-    public static final String RESET = "\u001B[0m";
-    public static final String BOLD = "\u001B[1m";
+    public static final String RED = "\u001B[31m"; // Rød tekst til fejl
+    public static final String RESET = "\u001B[0m"; // Nulstil farve
+    public static final String BOLD = "\u001B[1m"; // Fed skrift
 
-
+    // Privat konstruktor for at forhindre oprettelse af objekt
     private InputHelper() {
     }
-
+    // Henter et heltal fra brugeren
     public static int getIntInput(String prompt) {
         System.out.println(prompt);
         while (!scanner.hasNextInt()) {
@@ -21,7 +23,7 @@ public class InputHelper {
         scanner.nextLine(); // consumes \n
         return input;
     }
-
+    // Henter et heltal inden for et bestemt interval
     public static int getIntBoundedInput(String prompt, int start, int end) {
         int input = getIntInput(prompt);
         while (input < start || input >= end) {
@@ -31,12 +33,12 @@ public class InputHelper {
         }
         return input;
     }
-
+    // Henter en tekststreng fra brugeren
     public static String getStringInput(String prompt) {
         System.out.println(prompt);
         return scanner.nextLine();
     }
-
+    // Henter en boolean (true/false) fra brugeren
     public static boolean getBooleanInput(String prompt) {
         System.out.println(prompt);
         while (!scanner.hasNextBoolean()) {
