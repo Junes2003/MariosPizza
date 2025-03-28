@@ -1,63 +1,48 @@
 public class Accountancy {
-    private OrderManager orderManager; // Her gemmer vi en (OrderManager), som holder styr på ordrer
+    private OrderManager orderManager; // Håndterer ordrer
 
-    // Dette er som en opskrift til at lave en ny Accountancy/regnskab. Den får en OrderManager med i starten
-    public Accountancy(OrderManager orderManager) {
-        this.orderManager = orderManager; // Vi siger Brug denne ordreManager i klassen
+    public Accountancy(OrderManager orderManager) { // Konstruktør der tager en OrderManager som parameter
+        this.orderManager = orderManager;
     }
 
-    // Denne funktion finder ud af, hvor mange penge vi har tjent på betalte ordrer
-    public double getTotalRevenue() {
-        double total = 0; // Starter med 0 kroner, fordi vi ikke har talt noget endnu
+    public double getTotalRevenue() { // Beregner den samlede indtjening fra betalte ordrer
+        double total = 0;
         for (Order o : orderManager.getOrders()) {
-            if (o.getPaid()) { // Hvis ordren er betalt (true)
-                total += o.getTotalPrice(); // lægger vi prisen til vores total
+            if (o.getPaid()) { // Tjekker om ordren er betalt
+                total += o.getTotalPrice(); // Lægger prisen til totalen
             }
         }
-        return total; // Til sidst giver vi det samlede beløb tilbage
+        return total;
     }
 
-    // Denne funktion skriver nogle tal om, hvordan det går med ordrerne
-    public void printStatistics() {
-        // Skriver hvor mange penge vi har tjent
+    public void printStatistics() { // Udskriver statistik om ordrer
         System.out.println("Total revenue: " + getTotalRevenue() + " dkk");
-        // Skriver hvor mange ordrer vi har i alt
-        System.out.println("Order amount: " + orderManager.getOrders().size());
+        System.out.println("Order amount: " + orderManager.getOrders().size()); // Udskriver antal ordrer
     }
 
-    // Dette er en menu, hvor vi kan vælge, hvad vi vil se
-    public void accountancyMenu() {
-        printStatistics(); // Først viser vi tallene fra før
+    public void accountancyMenu(){ // Menu til at vise ordrestatus
+        printStatistics();
 
-        // Spørger brugeren: "Hvad vil du se?" (1 eller 2) og gemmer svaret
         int input = InputHelper.getIntBoundedInput("1 - View active orders\n2 - View paid orders\n", 1, 3);
 
-        // Her tjekker vi, hvad brugeren valgte
-        switch(input) {
-            case 1 -> { // Hvis de vælger 1: Vis ordrer, der ikke er betalt endnu
-                // Løkke: Kigger på hver ordre én efter én
+        switch(input){
+            case 1 -> { // Viser aktive (ubetalte) ordrer
                 for (int i = 0; i < orderManager.getOrders().size(); i++) {
-                    // Hvis ordren IKKE er betalt...
-                    if (!orderManager.getOrders().get(i).getPaid()) {
-                        // ...viser vi den på skærmen
+                    if (!orderManager.getOrders().get(i).getPaid()) { // Tjekker om ordren ikke er betalt
                         System.out.println(orderManager.getOrders().get(i));
                     }
                 }
             }
 
-            case 2 -> { // Hvis de vælger 2: Vis ordrer, der er betalt
-                // Løkke: Kigger på hver ordre igen
+            case 2 -> { // Viser betalte ordrer
                 for (int i = 0; i < orderManager.getOrders().size(); i++) {
-                    // Hvis ordren er betalt
-                    if (orderManager.getOrders().get(i).getPaid()) {
-                        // viser vi den på terminalen
+                    if (orderManager.getOrders().get(i).getPaid()) { // Tjekker om ordren er betalt
                         System.out.println(orderManager.getOrders().get(i));
                     }
                 }
             }
 
-            default -> // Hvis man skriver noget forkert (ikke 1 eller 2) siger det "Forkert! Prøv igen"
-                    System.out.println(InputHelper.RED + InputHelper.BOLD + "Invalid input! Try again" + InputHelper.BOLD + InputHelper.RESET);
+            default -> System.out.println(InputHelper.RED + InputHelper.BOLD + "Invalid input! Try again" + InputHelper.BOLD + InputHelper.RESET); // Fejlmeddelelse for ugyldigt input
         }
     }
 }
