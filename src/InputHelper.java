@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-// Scanner til at læse brugerinput
 public class InputHelper {
 
     // Farvekoder til konsoltekst
@@ -38,15 +37,16 @@ public class InputHelper {
         System.out.println(prompt);
         return scanner.nextLine();
     }
-    // Henter en boolean (true/false) fra brugeren
-    public static boolean getBooleanInput(String prompt) {
-        System.out.println(prompt);
-        while (!scanner.hasNextBoolean()) {
-            System.out.println(RED + "Invalid input. Try again" + RESET);
-            scanner.nextLine();
-        }
-        boolean input = scanner.nextBoolean();
-        scanner.nextLine(); // consumes \n
-        return input;
-    }
+//    // Henter en boolean (true/false) fra brugeren.
+//    VI BRUGER DEN IKKE, MEN ALTID GOD AT HAVE I PROGRAMMET TIL SENERE PROJEKTER
+//    public static boolean getBooleanInput(String prompt) {
+//        System.out.println(prompt);
+//        while (!scanner.hasNextBoolean()) {
+//            System.out.println(RED + "Invalid input. Try again" + RESET);
+//            scanner.nextLine();
+//        }
+//        boolean input = scanner.nextBoolean();
+//        scanner.nextLine(); // consumes \n
+//        return input;
+//    }
 }
