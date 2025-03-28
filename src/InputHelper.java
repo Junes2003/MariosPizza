@@ -8,14 +8,15 @@ public class InputHelper {
     public static final String RESET = "\u001B[0m"; // Nulstil farve
     public static final String BOLD = "\u001B[1m"; // Fed skrift
 
-    // Privat konstruktor for at forhindre oprettelse af objekt
+    // Privat og tom ekonstruktor for at forhindre oprettelse af objekt
     private InputHelper() {
     }
+
     // Henter et heltal fra brugeren
     public static int getIntInput(String prompt) {
         System.out.println(prompt);
         while (!scanner.hasNextInt()) {
-            System.out.println(RED + "Ugyldigt valg, prøv igen" + RESET);
+            System.out.println(RED + BOLD + "Invalid input! Try again" + RESET);
             scanner.nextLine();
         }
         int input = scanner.nextInt();
@@ -26,7 +27,7 @@ public class InputHelper {
     public static int getIntBoundedInput(String prompt, int start, int end) {
         int input = getIntInput(prompt);
         while (input < start || input >= end) {
-            System.out.println(RED + "Ugyldigt valg, prøv igen" + RESET);
+            System.out.println(RED + "Invalid input! Try again" + RESET);
             input = scanner.nextInt();
             scanner.nextLine();
         }

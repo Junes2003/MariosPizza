@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class Accountancy {
     private OrderManager orderManager; // Håndterer ordrer
 
@@ -23,7 +25,7 @@ public class Accountancy {
     public void accountancyMenu(){ // Menu til at vise ordrestatus
         printStatistics();
 
-        int input = InputHelper.getIntBoundedInput("1 - View active orders\n2 - View paid orders\n", 1, 3);
+        int input = InputHelper.getIntBoundedInput("\n1 - View active orders\n2 - View paid orders\n3 - View best seller\n", 1, 4);
 
         switch(input){
             case 1 -> { // Viser aktive (ubetalte) ordrer
@@ -42,7 +44,27 @@ public class Accountancy {
                 }
             }
 
+            case 3 -> showPopularProducts();
+
             default -> System.out.println(InputHelper.RED + InputHelper.BOLD + "Invalid input! Try again" + InputHelper.BOLD + InputHelper.RESET); // Fejlmeddelelse for ugyldigt input
         }
+    }
+
+    public void showPopularProducts() {
+        HashMap<Product, Integer> productCount = new HashMap<>();
+
+        for (Order order : orderManager.getOrders()) {
+            for (OrderLine orderLine : order.orderLines) {
+                productCount.put(orderLine.product, productCount.getOrDefault(orderLine.product, 0) + orderLine.quantity);
+            }
+        }
+
+        System.out.println("\nMost popular pizzas:");
+        productCount.entrySet()
+                .stream()
+                .sorted((a, b) -> b.getValue().compareTo(a.getValue())) // Sorterer fra mest til mindst solgte
+                .forEach(entry ->
+                        System.out.println(entry.getKey().getName() + " - " + entry.getValue() + " sold")
+                );
     }
 }

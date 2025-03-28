@@ -69,7 +69,7 @@ public class Menu {
             System.out.println("5 - View revenue summary");
             System.out.println("0 - Exit");
 
-            int choice = InputHelper.getIntInput("");  // Bruger vælger en funktion
+            int choice = InputHelper.getIntBoundedInput(" ", 0, 6);  // Bruger vælger en funktion. Kan ikke gå under 0 og ikke overgå 5.
 
             switch (choice) {
                 case 1 -> printMenu();  // Viser menuen
@@ -121,7 +121,7 @@ public class Menu {
 
                 case 0 -> running = false;  // Afslutter programmet
 
-                default -> System.out.println("Invalid input! Try again");  // Fejlmeddelelse ved forkert input
+                default -> System.out.println(InputHelper.RED + InputHelper.BOLD + "Invalid input! Try again" + InputHelper.RESET + InputHelper.BOLD);  // Fejlmeddelelse ved forkert input
             }
         }
     }

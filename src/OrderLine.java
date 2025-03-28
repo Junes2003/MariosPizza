@@ -1,6 +1,6 @@
 public class OrderLine {
-    private Product product; // Produktet
-    private int quantity; // Antal
+    public Product product; // Produktet
+    public int quantity; // Antal
 
     // Opret en ordrelinje med et produkt og antal
     public OrderLine(Product product, int quantity) {

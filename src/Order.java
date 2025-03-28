@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Order implements Comparable<Order> {
     private static int counter = 1; // Tæller for at give hver ordre et unikt ID
     private int orderId; // Ordre-ID
-    private ArrayList<OrderLine> orderLines; // Liste over ordrelinjer
+    public ArrayList<OrderLine> orderLines; // Liste over ordrelinjer
     private LocalDateTime orderTime; // Tidspunkt for ordren
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"); // Formatter for dato/tid
     private boolean isPaid = false; // Angiver om ordren er betalt
