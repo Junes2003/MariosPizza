@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Menu {
-    private ArrayList<Product> products; // Liste over pizzaer på menuen
+    public ArrayList<Product> products; // Liste over pizzaer på menuen
     public ArrayList<Order> orders; // Liste over ordrer
 
     public Menu() { // Opretter menuen og henter pizzaerne
@@ -89,16 +89,13 @@ public class Menu {
 
                         // Spørger om brugeren vil tilføje flere pizzaer
                         String addMore;
-                        while (true) {
+                        do {
                             addMore = InputHelper.getStringInput("Would you like to add more? (yes/no)").trim();
 
                             // Accepterer kun "yes" eller "no" som svar
-                            if (addMore.equalsIgnoreCase("no") || addMore.equalsIgnoreCase("yes")) {
-                                break;
-                            }
-                        }
+                        } while (!addMore.equalsIgnoreCase("no") && !addMore.equalsIgnoreCase("yes"));
 
-                        // Hvis brugeren ikke vil tilføje mere, afsluttes ordren
+                        // Hvis brugeren ikke vil tilføje mere, tilføjes ordren stadig og dirigeres tilbage til menuen
                         if (addMore.equalsIgnoreCase("no")) {
                             System.out.println("Order added!");
 
