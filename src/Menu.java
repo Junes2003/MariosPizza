@@ -69,7 +69,7 @@ public class Menu {
             System.out.println("5 - View revenue summary");
             System.out.println("0 - Exit");
 
-            int choice = InputHelper.getIntBoundedInput(" ", 0, 6);  // Bruger vælger en funktion. Kan ikke gå under 0 og ikke overgå 5.
+            int choice = InputHelper.getIntBoundedInput("", 0, 6);  // Bruger vælger en funktion. Kan ikke gå under 0 og ikke overgå 5.
 
             switch (choice) {
                 case 1 -> printMenu();  // Viser menuen
