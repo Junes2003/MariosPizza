@@ -19,7 +19,7 @@ public class Order implements Comparable<Order> {
     public void addOrderLine(Product product, int quantity) {
         orderLines.add(new OrderLine(product, quantity));
     }
-
+    
     public double getTotalPrice() {
         return orderLines.stream().mapToDouble(OrderLine::getTotalPrice).sum();
     }
