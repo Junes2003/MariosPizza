@@ -3,33 +3,29 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Order implements Comparable<Order> {
-    private static int counter = 1;
-    private int orderId;
-    private ArrayList<OrderLine> orderLines;
-    private LocalDateTime orderTime;
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-    private boolean isPaid = false;
+    private static int counter = 1; // Tæller for at give hver ordre et unikt ID
+    private int orderId; // Ordre-ID
+    private ArrayList<OrderLine> orderLines; // Liste over ordrelinjer
+    private LocalDateTime orderTime; // Tidspunkt for ordren
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"); // Formatter for dato/tid
+    private boolean isPaid = false; // Angiver om ordren er betalt
 
-    public Order() {
+    public Order() { // Opretter en ny ordre med unikt ID og tidsstempel
         this.orderId = counter++;
         this.orderLines = new ArrayList<>();
         this.orderTime = LocalDateTime.now();
     }
 
-    public void addOrderLine(Product product, int quantity) {
+    public void addOrderLine(Product product, int quantity) { // Tilføjer en ordrelinje
         orderLines.add(new OrderLine(product, quantity));
     }
 
-    public double getTotalPrice() {
+    public double getTotalPrice() { // Beregner den samlede pris for ordren
         return orderLines.stream().mapToDouble(OrderLine::getTotalPrice).sum();
     }
 
     @Override
-    public String toString() {
-//        return "Order ID: " + orderId + "\n" +
-//                "Total: " + getTotalPrice() + " dkk\n" +
-//                "Placed: " + orderTime.format(formatter) + "\n" +
-//                "Expected done: " + orderTime.plusMinutes(15).format(formatter);
+    public String toString() { // Returnerer en tekstrepræsentation af ordren
         String result = "Order ID: " + orderId + "\n";
         for (OrderLine order : orderLines) {
             result += order + "\n";
@@ -40,26 +36,23 @@ public class Order implements Comparable<Order> {
         return result;
     }
 
-    public boolean getPaid(){
+    public boolean getPaid() { // Returnerer betalingsstatus
         return isPaid;
     }
 
-    public void setPaid(boolean isPaid) {
+    public void setPaid(boolean isPaid) { // Opdaterer betalingsstatus
         this.isPaid = isPaid;
     }
 
-    public int getOrderId(){
+    public int getOrderId() { // Returnerer ordre-ID
         return orderId;
     }
 
-    @Override
-    public int compareTo(Order o) {
+    public int compareTo(Order o) { // Sammenligner ordrer baseret på tidspunkt
         return orderTime.compareTo(o.orderTime);
-//        return o.orderTime.compareTo(orderTime);
     }
 
-    public LocalDateTime getOrderTime(){
+    public LocalDateTime getOrderTime() { // Returnerer tidspunktet for ordren
         return orderTime;
     }
-
 }

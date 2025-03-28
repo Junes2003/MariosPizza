@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
 public class Menu {
-    private ArrayList<Product> products;
-    public ArrayList<Order> orders;
+    private ArrayList<Product> products; // Liste over pizzaer på menuen
+    public ArrayList<Order> orders; // Liste over ordrer
 
-    public Menu() {
-        products = new ArrayList<>();
-        orders = new ArrayList<>();
-        loadMenu();
+    public Menu() { // Opretter menuen og henter pizzaerne
+        products = new ArrayList<>(); // Opretter en tom liste af produkter
+        orders = new ArrayList<>(); // Opretter en tom liste af ordrer
+        loadMenu(); // Fylder menuen med produkter
     }
 
-    private void loadMenu() {
+    private void loadMenu() { // Tilføjer pizzaer til menuen
         products.add(new Product("No. 1 Vesuvio", 72, "Tomato sauce, cheese, ham"));
         products.add(new Product("No. 2 American", 68, "Tomato sauce, cheese, pepperoni"));
         products.add(new Product("No. 3 Cacciatore", 72, "Tomato sauce, cheese, ham, mushrooms"));
@@ -43,11 +43,11 @@ public class Menu {
         products.add(new Product("No. 30 Aden", 84, "Tomato sauce, cheese, butter chicken, jalapeños"));
     }
 
-    public ArrayList<Product> getProducts() {
+    public ArrayList<Product> getProducts() { // Giver adgang til listen over pizzaer
         return products;
     }
 
-    public void printMenu() {
+    public void printMenu() { // Viser menuen i terminalen
         for (Product product : products) {
             System.out.println(product);
         }
