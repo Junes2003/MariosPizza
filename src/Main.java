@@ -4,6 +4,6 @@ public class Main {
         Menu menu = new Menu();  // Opretter objekt så vi kan tilgå metoderne i klassen
 
         menu.initializeSystem(); // kalder på metoden i Menu klassen, der starter hele systemet
-//
+
     }
 }
