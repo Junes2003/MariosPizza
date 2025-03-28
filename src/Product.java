@@ -22,7 +22,7 @@ class Product {
     }
 
     // Overrider toString() for at returnere en beskrivelse af produktet
-    @Override
+
     public String toString() {
         return name + " - " + ingredients + " - " + price + " kr";
     }
