@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Menu {
     private ArrayList<Product> products; // Liste over pizzaer på menuen
-    public ArrayList<Order> orders; // Liste over ordrer (burde måske være privat)
+    public ArrayList<Order> orders; // Liste over ordrer
 
     public Menu() { // Opretter menuen og henter pizzaerne
         products = new ArrayList<>(); // Opretter en tom liste af produkter
